@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>FARAON | Лаунж-бар</title>
+    <!-- Шрифт Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (иконки) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0b0c0e;
+            background-image: radial-gradient(circle at 25% 0%, #1f2a2f 0%, #0a0b0d 70%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #eaeef2;
+        }
+
+        .card {
+            max-width: 480px;
+            width: 100%;
+            background: rgba(18, 22, 25, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(200, 170, 110, 0.25);
+            border-radius: 44px;
+            padding: 32px 24px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(212, 175, 95, 0.1) inset;
+            transition: all 0.2s ease;
+        }
+
+        /* Логотип - теперь с вашим изображением */
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 28px;
+        }
+
+        .logo-image {
+            width: 110px;
+            height: 110px;
+            margin-bottom: 10px;
+            border-radius: 50%;
+            background: rgba(26, 20, 10, 0.5);
+            padding: 8px;
+            border: 2px solid rgba(212, 175, 95, 0.5);
+            box-shadow: 0 0 25px rgba(200, 160, 70, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            object-fit: cover; /* Чтобы картинка хорошо вписалась в круг */
+        }
+
+        .logo-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(218, 185, 100, 0.8);
+            border-color: #dbb86b;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #e5d9b5, #c6a45c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 4px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.6);
+        }
+
+        .subhead {
+            font-size: 13px;
+            font-weight: 400;
+            color: #a89f8c;
+            letter-spacing: 1px;
+            border-bottom: 1px dashed #524b3a;
+            padding-bottom: 16px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Кнопки */
+        .menu-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 22px;
+            background: rgba(26, 32, 36, 0.7);
+            border: 1px solid rgba(212, 175, 95, 0.25);
+            border-radius: 100px;
+            text-decoration: none;
+            color: #f0ebdd;
+            font-weight: 500;
+            font-size: 16px;
+            backdrop-filter: blur(5px);
+            transition: all 0.25s ease;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-btn:hover {
+            background: rgba(45, 50, 55, 0.9);
+            border-color: #c8a862;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.7), 0 0 15px rgba(200, 168, 90, 0.3);
+        }
+
+        .menu-btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-icon {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .btn-icon i {
+            font-size: 24px;
+            width: 30px;
+            text-align: center;
+            color: #dabf7c;
+        }
+
+        .btn-arrow {
+            color: #ad9f7c;
+            font-size: 16px;
+            opacity: 0.7;
+            transition: 0.2s;
+        }
+
+        .menu-btn:hover .btn-arrow {
+            transform: translateX(5px);
+            color: #e6c87c;
+            opacity: 1;
+        }
+
+        /* Главные кнопки */
+        .primary-btn {
+            background: linear-gradient(145deg, #292419, #1e1b12);
+            border: 1.5px solid #dbb454;
+            box-shadow: 0 8px 0 #0e0c08, 0 10px 20px rgba(0,0,0,0.6);
+            font-weight: 600;
+            font-size: 18px;
+            padding: 18px 22px;
+        }
+
+        .primary-btn .btn-icon i {
+            color: #f5cf7b;
+            font-size: 28px;
+        }
+
+        .primary-btn .btn-icon span {
+            background: linear-gradient(145deg, #f9e7b3, #e2b75c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+
+        .primary-btn:hover {
+            border-color: #f3cd7a;
+            background: linear-gradient(145deg, #322c1d, #2a2417);
+        }
+
+        /* Разделитель */
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 22px 0 12px;
+            color: #756e5a;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .divider-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #8f7f55, transparent);
+        }
+
+        /* Соцсети */
+        .social-row {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 20px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .social-icon-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #b9ae93;
+            font-size: 13px;
+            gap: 6px;
+            transition: 0.2s;
+            min-width: 60px;
+        }
+
+        .social-icon-link i {
+            font-size: 32px;
+            background: rgba(20, 20, 20, 0.6);
+            padding: 12px;
+            border-radius: 30px;
+            border: 1px solid #4b412b;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s;
+        }
+
+        .social-icon-link:hover {
+            color: #e6cf97;
+        }
+
+        .social-icon-link:hover i {
+            border-color: #c6a451;
+            background: #2e2a1f;
+            transform: scale(1.05);
+        }
+
+        /* Яндекс.Карты */
+        .yandex-btn {
+            background: rgba(44, 42, 30, 0.8);
+            border-color: #85743b;
+        }
+
+        .yandex-btn i {
+            color: #f0d47e;
+        }
+
+        /* Ссылки внизу */
+        .bottom-links {
+            margin-top: 22px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .bottom-link {
+            color: #ad9f7c;
+            text-decoration: none;
+            border: 1px solid #3c3627;
+            border-radius: 40px;
+            padding: 10px 18px;
+            font-size: 14px;
+            background: #13100b;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .bottom-link:hover {
+            background: #1f1b12;
+            border-color: #ad9f7c;
+            color: #e6cf97;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 12px;
+            color: #5b553f;
+        }
+
+        /* Адаптация */
+        @media (max-width: 400px) {
+            .card { padding: 20px 16px; }
+            .menu-btn { padding: 14px 18px; font-size: 15px; }
+            .social-icon-link i { width: 48px; height: 48px; font-size: 26px; }
+            .logo-image { width: 90px; height: 90px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="logo-container">
+            <!-- ВАШ ЛОГОТИП: прямая ссылка на изображение -->
+            <img src="https://faraon.free.nf/New.png" alt="FARAON Lounge Bar Logo" class="logo-image">
+            <div class="logo-text">FARAON</div>
+            <div class="subhead">LAUNGE BAR · OREL</div>
+        </div>
+
+        <!-- Кнопка: Вызов кальянщика + игра -->
+        <a href="https://t.me/faraonorel_bot?game=faraon" class="menu-btn primary-btn" target="_blank" rel="noopener noreferrer">
+            <div class="btn-icon">
+                <i class="fas fa-qrcode"></i>
+                <span>Вызвать кальянщика &nbsp;🎮</span>
+            </div>
+            <div class="btn-arrow"><i class="fas fa-chevron-right"></i></div>
+        </a>
+
+        <!-- Кнопка МЕНЮ -->
+        <a href="https://t.me/FaraonOrelBot/menu" class="menu-btn primary-btn" target="_blank" rel="noopener noreferrer" style="margin-top: 10px;">
+            <div class="btn-icon">
+                <i class="fas fa-utensils"></i>
+                <span>Меню</span>
+            </div>
+            <div class="btn-arrow"><i class="fas fa-chevron-right"></i></div>
+        </a>
+
+        <!-- Социальные сети -->
+        <div class="social-row">
+            <a href="https://t.me/faraon_loungebar" class="social-icon-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-telegram-plane"></i>
+                <span>Telegram</span>
+            </a>
+            <a href="https://vk.com/faraon_loungebar" class="social-icon-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-vk"></i>
+                <span>VK</span>
+            </a>
+            <a href="https://www.instagram.com/faraon_loungebar" class="social-icon-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+            </a>
+        </div>
+
+        <!-- Разделитель -->
+        <div class="divider">
+            <span class="divider-line"></span>
+            <span><i class="fas fa-map-pin" style="margin-right: 6px; color:#a3894f;"></i>КАРТЫ</span>
+            <span class="divider-line"></span>
+        </div>
+
+        <!-- Яндекс.Карты -->
+        <a href="https://yandex.md/profile/236580851559" class="menu-btn yandex-btn" target="_blank" rel="noopener noreferrer">
+            <div class="btn-icon">
+                <i class="fas fa-map-marked-alt"></i>
+                <span>Яндекс Карты</span>
+            </div>
+            <div class="btn-arrow"><i class="fas fa-chevron-right"></i></div>
+        </a>
+
+        <!-- Дополнительные ссылки -->
+        <div class="bottom-links">
+            <a href="http://faraon-orel.online" class="bottom-link" target="_blank">
+                <i class="fas fa-globe"></i> faraon-orel.online
+            </a>
+            <a href="https://t.me/faraonorel_bot" class="bottom-link" target="_blank">
+                <i class="fab fa-telegram"></i> Telegram Bot
+            </a>
+        </div>
+
+        <!-- Футер -->
+        <footer>
+            <i class="fas fa-star" style="opacity:0.4;"></i> Живи ярко, отдыхай по-царски <i class="fas fa-star" style="opacity:0.4;"></i>
+        </footer>
+    </div>
+</body>
+</html>
