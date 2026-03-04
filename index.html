@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>FARAON | Лаунж-бар</title>
+    <title>Фараон | Лаунж-бар</title>
     <!-- Шрифт Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,7 +42,7 @@
             transition: all 0.2s ease;
         }
 
-        /* Логотип - теперь с вашим изображением */
+        /* Логотип */
         .logo-container {
             display: flex;
             flex-direction: column;
@@ -51,8 +51,8 @@
         }
 
         .logo-image {
-            width: 110px;
-            height: 110px;
+            width: 120px;
+            height: 120px;
             margin-bottom: 10px;
             border-radius: 50%;
             background: rgba(26, 20, 10, 0.5);
@@ -60,7 +60,7 @@
             border: 2px solid rgba(212, 175, 95, 0.5);
             box-shadow: 0 0 25px rgba(200, 160, 70, 0.4);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            object-fit: cover; /* Чтобы картинка хорошо вписалась в круг */
+            object-fit: cover;
         }
 
         .logo-image:hover {
@@ -70,9 +70,9 @@
         }
 
         .logo-text {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 700;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             text-transform: uppercase;
             background: linear-gradient(135deg, #e5d9b5, #c6a45c);
             -webkit-background-clip: text;
@@ -291,21 +291,22 @@
             .card { padding: 20px 16px; }
             .menu-btn { padding: 14px 18px; font-size: 15px; }
             .social-icon-link i { width: 48px; height: 48px; font-size: 26px; }
-            .logo-image { width: 90px; height: 90px; }
+            .logo-image { width: 100px; height: 100px; }
+            .logo-text { font-size: 28px; }
         }
     </style>
 </head>
 <body>
     <div class="card">
         <div class="logo-container">
-            <!-- ВАШ ЛОГОТИП: прямая ссылка на изображение -->
-            <img src="https://faraon.free.nf/New.png" alt="FARAON Lounge Bar Logo" class="logo-image">
-            <div class="logo-text">FARAON</div>
+            <!-- НОВЫЙ ЛОГОТИП -->
+            <img src="http://faraon.free.nf/1.png" alt="Фараон Лаунж-бар" class="logo-image">
+            <div class="logo-text">ФАРАОН</div>
             <div class="subhead">LAUNGE BAR · OREL</div>
         </div>
 
-        <!-- Кнопка: Вызов кальянщика + игра -->
-        <a href="https://t.me/faraonorel_bot?game=faraon" class="menu-btn primary-btn" target="_blank" rel="noopener noreferrer">
+        <!-- Кнопка: Вызов кальянщика -->
+        <a href="https://danceplusart.github.io/FaraonGame/" class="menu-btn primary-btn" target="_blank" rel="noopener noreferrer">
             <div class="btn-icon">
                 <i class="fas fa-qrcode"></i>
                 <span>Вызвать кальянщика &nbsp;🎮</span>
