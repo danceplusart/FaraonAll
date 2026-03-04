@@ -51,35 +51,21 @@
         }
 
         .logo-image {
-            width: 120px;
-            height: 120px;
-            margin-bottom: 10px;
-            border-radius: 50%;
-            background: rgba(26, 20, 10, 0.5);
-            padding: 8px;
-            border: 2px solid rgba(212, 175, 95, 0.5);
-            box-shadow: 0 0 25px rgba(200, 160, 70, 0.4);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            object-fit: cover;
+            width: 200px;
+            height: auto;
+            margin-bottom: 5px;
+            filter: drop-shadow(0 0 15px rgba(218, 185, 100, 0.6));
+            transition: transform 0.3s ease, filter 0.3s ease;
         }
 
         .logo-image:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(218, 185, 100, 0.8);
-            border-color: #dbb86b;
+            transform: scale(1.02);
+            filter: drop-shadow(0 0 20px rgba(218, 185, 100, 0.9));
         }
 
+        /* Убираем текстовый логотип, так как он теперь в картинке */
         .logo-text {
-            font-size: 32px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            background: linear-gradient(135deg, #e5d9b5, #c6a45c);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 4px;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.6);
+            display: none;
         }
 
         .subhead {
@@ -91,6 +77,7 @@
             padding-bottom: 16px;
             width: 100%;
             text-align: center;
+            margin-top: 5px;
         }
 
         /* Кнопки */
@@ -291,18 +278,16 @@
             .card { padding: 20px 16px; }
             .menu-btn { padding: 14px 18px; font-size: 15px; }
             .social-icon-link i { width: 48px; height: 48px; font-size: 26px; }
-            .logo-image { width: 100px; height: 100px; }
-            .logo-text { font-size: 28px; }
+            .logo-image { width: 160px; }
         }
     </style>
 </head>
 <body>
     <div class="card">
         <div class="logo-container">
-            <!-- Логотип -->
-            <img src="http://faraon.free.nf/1.png" alt="Фараон Лаунж-бар" class="logo-image">
-            <div class="logo-text">ФАРАОН</div>
-            <!-- ПОЛНОСТЬЮ РУСИФИЦИРОВАНО -->
+            <!-- НОВЫЙ ЛОГОТИП из изображения -->
+            <img src="https://faraon.free.nf/1.png" alt="Фараон Лаунж-бар" class="logo-image">
+            <!-- Подпись под логотипом -->
             <div class="subhead">ЛАУНЖ-БАР · ОРЁЛ</div>
         </div>
 
@@ -310,7 +295,7 @@
         <a href="https://t.me/faraonorel_bot" class="menu-btn primary-btn" target="_blank" rel="noopener noreferrer">
             <div class="btn-icon">
                 <i class="fas fa-qrcode"></i>
-                <span>ВЫЗВАТЬ КАЛЬЯНЩИКА &nbsp;🎮</span>
+                <span>ВЫЗВАТЬ КАЛЬЯНЩИКА</span>
             </div>
             <div class="btn-arrow"><i class="fas fa-chevron-right"></i></div>
         </a>
@@ -324,23 +309,23 @@
             <div class="btn-arrow"><i class="fas fa-chevron-right"></i></div>
         </a>
 
-        <!-- Социальные сети (названия уже на русском) -->
+        <!-- Социальные сети -->
         <div class="social-row">
             <a href="https://t.me/faraon_loungebar" class="social-icon-link" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-telegram-plane"></i>
-                <span>Telegram</span> <!-- Оставляем как есть, бренд -->
+                <span>Telegram</span>
             </a>
             <a href="https://vk.com/faraon_loungebar" class="social-icon-link" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-vk"></i>
-                <span>ВКонтакте</span> <!-- РУССКИЙ -->
+                <span>ВКонтакте</span>
             </a>
             <a href="https://www.instagram.com/faraon_loungebar" class="social-icon-link" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-instagram"></i>
-                <span>Instagram</span> <!-- Оставляем как есть, бренд -->
+                <span>Instagram</span>
             </a>
         </div>
 
-        <!-- Разделитель (уже на русском) -->
+        <!-- Разделитель -->
         <div class="divider">
             <span class="divider-line"></span>
             <span><i class="fas fa-map-pin" style="margin-right: 6px; color:#a3894f;"></i>КАРТЫ</span>
@@ -351,12 +336,12 @@
         <a href="https://yandex.md/profile/236580851559" class="menu-btn yandex-btn" target="_blank" rel="noopener noreferrer">
             <div class="btn-icon">
                 <i class="fas fa-map-marked-alt"></i>
-                <span>ЯНДЕКС КАРТЫ</span> <!-- РУССКИЙ -->
+                <span>ЯНДЕКС КАРТЫ</span>
             </div>
             <div class="btn-arrow"><i class="fas fa-chevron-right"></i></div>
         </a>
 
-        <!-- Дополнительные ссылки (уже на русском) -->
+        <!-- Дополнительные ссылки -->
         <div class="bottom-links">
             <a href="http://faraon-orel.online" class="bottom-link" target="_blank">
                 <i class="fas fa-globe"></i> НАШ САЙТ
@@ -366,7 +351,7 @@
             </a>
         </div>
 
-        <!-- Футер (полностью на русском) -->
+        <!-- Футер -->
         <footer>
             <i class="fas fa-star" style="opacity:0.4;"></i> Живи ярко, отдыхай по-царски <i class="fas fa-star" style="opacity:0.4;"></i>
         </footer>
